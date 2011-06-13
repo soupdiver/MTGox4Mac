@@ -19,7 +19,7 @@
 -(void)startGettingPrices;
 -(void)startGettingOpenOrders:(NSString*)username
 				  andPassword:(NSString*)password;
--(void)startPlacingOrder:(NSString*)username 
+-(void)startPlacingOrderWithUsername:(NSString*)username 
 			 andPassword:(NSString*)password 
 			   andAmount:(NSString*)amount  
 				 andType:(NSString*)type

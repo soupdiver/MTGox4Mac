@@ -135,7 +135,7 @@
 	
 	[pool drain];
 }
--(void)startPlacingOrder:(NSString *)username andPassword:(NSString *)password andAmount:(NSString *)amount andType:(NSString *)type andPrice:(NSString*)price
+-(void)startPlacingOrderWithUsername:(NSString *)username andPassword:(NSString *)password andAmount:(NSString *)amount andType:(NSString *)type andPrice:(NSString*)price
 {
 	NSMutableDictionary	*data = [[NSMutableDictionary alloc] init];
 	

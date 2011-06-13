@@ -44,7 +44,7 @@
 {
 	[gonx startGettingBalance:[username stringValue] andPassword:[password stringValue]];
 }
--(IBAction)getData:(id)sender
+-(IBAction)getPrices:(id)sender
 {
 	if(refreshPrices)
 	{
@@ -108,7 +108,7 @@
 }
 -(IBAction)buyButtonPressed:(id)sender
 {
-	[gonx startPlacingOrder:[username stringValue] 
+	[gonx startPlacingOrderWithUsername:[username stringValue] 
 				andPassword:[password stringValue]
 				  andAmount:[amount stringValue]
 					andType:@"buy"
@@ -116,7 +116,7 @@
 }
 -(IBAction)sellButtonPressed:(id)sender
 {
-	[gonx startPlacingOrder:[username stringValue] 
+	[gonx startPlacingOrderWithUsername:[username stringValue] 
 				andPassword:[password stringValue]
 				  andAmount:[amount stringValue]
 					andType:@"sell"

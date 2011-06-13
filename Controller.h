@@ -24,7 +24,7 @@
 	NSArray *openOrders;
 	bool refreshPrices;
 }
--(IBAction)getData:(id)sender;
+-(IBAction)getPrices:(id)sender;
 -(IBAction)getBalance:(id)sender;
 -(IBAction)getOpenOrders:(id)sender;
 -(IBAction)buyButtonPressed:(id)sender;

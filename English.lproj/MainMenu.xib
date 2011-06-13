@@ -12,8 +12,6 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="372"/>
-			<integer value="29"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -243,7 +241,7 @@
 				<nil key="NSViewClass"/>
 				<string key="NSWindowContentMaxSize">{1.79769e+308, 1.79769e+308}</string>
 				<object class="NSView" key="NSWindowView" id="439893737">
-					<reference key="NSNextResponder"/>
+					<nil key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
 					<object class="NSMutableArray" key="NSSubviews">
 						<bool key="EncodedWithXMLCoder">YES</bool>
@@ -1001,7 +999,6 @@
 						</object>
 					</object>
 					<string key="NSFrameSize">{384, 516}</string>
-					<reference key="NSSuperview"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1920, 1178}}</string>
 				<string key="NSMaxSize">{1.79769e+308, 1.79769e+308}</string>
@@ -1152,14 +1149,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
-						<string key="label">getData:</string>
-						<reference key="source" ref="912729576"/>
-						<reference key="destination" ref="49651846"/>
-					</object>
-					<int key="connectionID">578</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
 						<string key="label">getBalance:</string>
 						<reference key="source" ref="912729576"/>
 						<reference key="destination" ref="690565098"/>
@@ -1245,6 +1234,14 @@
 						<reference key="destination" ref="49651846"/>
 					</object>
 					<int key="connectionID">690</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">getPrices:</string>
+						<reference key="source" ref="912729576"/>
+						<reference key="destination" ref="49651846"/>
+					</object>
+					<int key="connectionID">691</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -2266,7 +2263,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">690</int>
+			<int key="maxID">691</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -2280,8 +2277,8 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>buyButtonPressed:</string>
 							<string>getBalance:</string>
-							<string>getData:</string>
 							<string>getOpenOrders:</string>
+							<string>getPrices:</string>
 							<string>sellButtonPressed:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
@@ -2299,8 +2296,8 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>buyButtonPressed:</string>
 							<string>getBalance:</string>
-							<string>getData:</string>
 							<string>getOpenOrders:</string>
+							<string>getPrices:</string>
 							<string>sellButtonPressed:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
@@ -2314,11 +2311,11 @@
 								<string key="candidateClassName">id</string>
 							</object>
 							<object class="IBActionInfo">
-								<string key="name">getData:</string>
+								<string key="name">getOpenOrders:</string>
 								<string key="candidateClassName">id</string>
 							</object>
 							<object class="IBActionInfo">
-								<string key="name">getOpenOrders:</string>
+								<string key="name">getPrices:</string>
 								<string key="candidateClassName">id</string>
 							</object>
 							<object class="IBActionInfo">

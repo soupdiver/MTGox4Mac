@@ -266,12 +266,13 @@
 								<string>29B97314FDCFA39411CA2CEA</string>
 								<string>080E96DDFE201D6D7F000001</string>
 								<string>29B97317FDCFA39411CA2CEA</string>
+								<string>1C37FBAC04509CD000000102</string>
 								<string>1C37FABC05509CD000000102</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>8</integer>
+									<integer>6</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
@@ -314,7 +315,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>MTGONXController.m</string>
+								<string>mtgonxClientAppDelegate.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -322,11 +323,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>MTGONXController.m</string>
+										<string>mtgonxClientAppDelegate.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>DC1D11D113A6A3BA00E506E9</string>
+										<string>DC1D124013A6AF5300E506E9</string>
 										<key>history</key>
 										<array>
 											<string>DCEF6C2B13A277380023DAA5</string>
@@ -339,11 +340,11 @@
 											<string>DC1D0F0B13A52BD100E506E9</string>
 											<string>DC1D0F4213A5428300E506E9</string>
 											<string>DC1D107B13A6396800E506E9</string>
-											<string>DC1D117F13A69BC900E506E9</string>
-											<string>DC1D11BA13A6A10C00E506E9</string>
-											<string>DC1D11BB13A6A10C00E506E9</string>
-											<string>DC1D11C613A6A2C800E506E9</string>
-											<string>DC1D11CE13A6A36000E506E9</string>
+											<string>DC1D122013A6AD0A00E506E9</string>
+											<string>DC1D122113A6AD0A00E506E9</string>
+											<string>DC1D122213A6AD0A00E506E9</string>
+											<string>DC1D123F13A6AF5300E506E9</string>
+											<string>DC1D11E713A6A9D300E506E9</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -552,6 +553,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>DC1D11DE13A6A9BD00E506E9</string>
 		<string>DC1D0D8B13A50E0700E506E9</string>
 		<string>DC1D0D8C13A50E0700E506E9</string>
 		<string>1CD10A99069EF8BA00B06720</string>
@@ -581,7 +583,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>JSON.h</string>
+								<string>Controller.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -1375,33 +1377,40 @@
 			<integer>0</integer>
 		</dict>
 		<dict>
+			<key>FirstTimeWindowDisplayed</key>
+			<false/>
 			<key>Identifier</key>
 			<string>windowTool.refactoring</string>
 			<key>IncludeInToolsMenu</key>
 			<integer>0</integer>
+			<key>IsVertical</key>
+			<true/>
 			<key>Layout</key>
 			<array>
 				<dict>
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<integer>1</integer>
+							<key>ContentConfiguration</key>
+							<dict>
+								<key>PBXProjectModuleGUID</key>
+								<string>DC1D11DD13A6A9BD00E506E9</string>
+							</dict>
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{0, 0}, {500, 335}</string>
+								<string>{{0, 0}, {1097, 326}}</string>
 								<key>RubberWindowFrame</key>
-								<string>{0, 0}, {500, 335}</string>
+								<string>110 294 1097 367 0 0 1280 778 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCRefactoringModule</string>
 							<key>Proportion</key>
-							<string>100%</string>
+							<string>326pt</string>
 						</dict>
 					</array>
 					<key>Proportion</key>
-					<string>100%</string>
+					<string>326pt</string>
 				</dict>
 			</array>
 			<key>Name</key>
@@ -1410,8 +1419,20 @@
 			<array>
 				<string>XCRefactoringModule</string>
 			</array>
+			<key>StatusbarIsVisible</key>
+			<true/>
+			<key>TableOfContents</key>
+			<array>
+				<string>DC1D11DE13A6A9BD00E506E9</string>
+				<string>DC1D11DF13A6A9BD00E506E9</string>
+				<string>DC1D11DD13A6A9BD00E506E9</string>
+			</array>
 			<key>WindowString</key>
-			<string>200 200 500 356 0 0 1920 1200 </string>
+			<string>110 294 1097 367 0 0 1280 778 </string>
+			<key>WindowToolGUID</key>
+			<string>DC1D11DE13A6A9BD00E506E9</string>
+			<key>WindowToolIsVisible</key>
+			<false/>
 		</dict>
 	</array>
 </dict>

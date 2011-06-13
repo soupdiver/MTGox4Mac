@@ -17,16 +17,16 @@
 @synthesize status;
 @synthesize type;
 
--(void)initWithNumber:(NSNumber*)number
-	   andPrice:(NSNumber*)price
-		andAmount:(NSNumber*)amount
-		  andType:(NSNumber*)type
-		andStatus:(NSNumber*)status;
+-(void)initWithNumber:(NSNumber*)aNumber
+	   andPrice:(NSNumber*)aPrice
+		andAmount:(NSNumber*)anAmount
+		  andType:(NSNumber*)aType
+		andStatus:(NSNumber*)aStatus;
 {
-	self.amount = amount;
-	self.type = type;
-	self.status = status;
-	self.number = number;
-	self.price = price;
+	self.amount = anAmount;
+	self.type = aType;
+	self.status = aStatus;
+	self.number = aNumber;
+	self.price = aPrice;
 }
 @end

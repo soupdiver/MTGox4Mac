@@ -17,8 +17,8 @@
 }
 -(void)awakeFromNib
 {
-	[username setStringValue:@"viech0r"];
-	[password setStringValue:@"obacht"];
+	
+	
 }
 
 @end
