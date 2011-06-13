@@ -1238,6 +1238,14 @@
 					</object>
 					<int key="connectionID">688</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">refreshButton</string>
+						<reference key="source" ref="912729576"/>
+						<reference key="destination" ref="49651846"/>
+					</object>
+					<int key="connectionID">690</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -2092,9 +2100,9 @@
 					<integer value="1"/>
 					<string>{74, 862}</string>
 					<string>{{6, 978}, {478, 20}}</string>
-					<string>{{629, 90}, {384, 516}}</string>
+					<string>{{576, 129}, {384, 516}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{629, 90}, {384, 516}}</string>
+					<string>{{576, 129}, {384, 516}}</string>
 					<integer value="1"/>
 					<string>{{33, 99}, {480, 360}}</string>
 					<string>{3.40282e+38, 3.40282e+38}</string>
@@ -2258,7 +2266,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">688</int>
+			<int key="maxID">690</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -2324,28 +2332,26 @@
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>amount</string>
-							<string>autoRefresh</string>
 							<string>balanceBTC</string>
 							<string>balanceUSD</string>
 							<string>buy</string>
 							<string>openOrdersTable</string>
 							<string>password</string>
 							<string>price</string>
-							<string>refreshTime</string>
+							<string>refreshButton</string>
 							<string>sell</string>
 							<string>username</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>NSTextField</string>
-							<string>NSButton</string>
 							<string>NSTextField</string>
 							<string>NSTextField</string>
 							<string>NSTextField</string>
 							<string>NSTableView</string>
 							<string>NSTextField</string>
 							<string>NSTextField</string>
-							<string>NSTextField</string>
+							<string>NSButton</string>
 							<string>NSTextField</string>
 							<string>NSTextField</string>
 						</object>
@@ -2355,14 +2361,13 @@
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>amount</string>
-							<string>autoRefresh</string>
 							<string>balanceBTC</string>
 							<string>balanceUSD</string>
 							<string>buy</string>
 							<string>openOrdersTable</string>
 							<string>password</string>
 							<string>price</string>
-							<string>refreshTime</string>
+							<string>refreshButton</string>
 							<string>sell</string>
 							<string>username</string>
 						</object>
@@ -2371,10 +2376,6 @@
 							<object class="IBToOneOutletInfo">
 								<string key="name">amount</string>
 								<string key="candidateClassName">NSTextField</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">autoRefresh</string>
-								<string key="candidateClassName">NSButton</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">balanceBTC</string>
@@ -2401,8 +2402,8 @@
 								<string key="candidateClassName">NSTextField</string>
 							</object>
 							<object class="IBToOneOutletInfo">
-								<string key="name">refreshTime</string>
-								<string key="candidateClassName">NSTextField</string>
+								<string key="name">refreshButton</string>
+								<string key="candidateClassName">NSButton</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">sell</string>

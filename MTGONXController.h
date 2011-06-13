@@ -11,8 +11,9 @@
 
 @interface MTGONXController : NSObject {
 	id delegate;
-	NSArray *orders;
 }
+-(NSDictionary*)sendRequest:(NSString*)url 
+		  withBodyString:(NSString*)bodyString;
 -(void)startGettingBalance:(NSString*)username
 			   andPassword:(NSString*)password;
 -(void)startGettingPrices;
@@ -26,9 +27,9 @@
 -(void)getBalance:(NSDictionary*)userData;
 -(void)getPrices;
 -(void)placeOrder:(NSDictionary*)data;
+-(void)getOpenOrders:(NSMutableDictionary *)userData;
 
 @property (assign) id delegate;
-@property (assign) NSArray *orders;
 
 @end
 
@@ -41,5 +42,6 @@
 -(void)gonxController:(MTGONXController*)sender
    ReceivedOpenOrders:(NSArray*)orders;
 -(void)gonxControllerPlacedAnOrder:(MTGONXController*)sender;
+-(void)gonxControllerStoppedGettingPrices:(MTGONXController*)sender;
 
 @end

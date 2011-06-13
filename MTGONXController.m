@@ -7,18 +7,11 @@
 //
 
 #import "MTGONXController.h"
-#import "JSON.h"
+#import "SBJson.h"
 
 @implementation MTGONXController
 @synthesize delegate;
-@synthesize orders;
 
--(id)init
-{
-	orders = [[NSMutableArray alloc]init];
-	
-	return self;
-}
 -(void) startGettingBalance:(NSString *)username andPassword:(NSString *)password
 {
 	NSMutableDictionary *userData = [[NSMutableDictionary alloc] init];
@@ -39,29 +32,48 @@
 	
 	[self performSelectorInBackground:@selector(getOpenOrders:) withObject:userData];
 }
--(void)getOpenOrders:(NSMutableDictionary*)userData
+-(NSDictionary*)sendRequest:(NSString *)url_ withBodyString:(NSString *)bodyString
 {
-	NSAutoreleasePool *pool = [NSAutoreleasePool new];
-	
-	NSURL *url = [ NSURL URLWithString: @"https://mtgox.com/code/getOrders.php"];
+	NSURL *url = [ NSURL URLWithString: url_];
 	NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-	NSString *type = [NSString stringWithString:@"application/x-www-form-urlencoded"];
-	NSString *bodyString = [NSString stringWithFormat:@"name=%@&pass=%@", [userData objectForKey:@"username"], [userData objectForKey:@"password"]];
-	NSData *body = [NSData dataWithData:[bodyString dataUsingEncoding:1]];
-	[request addValue:type forHTTPHeaderField:@"Content-Type"];
-	[request setHTTPBody:body];
-	[request setHTTPMethod:@"POST"];
+	
+	if (bodyString != nil) {
+		NSString *type = [NSString stringWithString:@"application/x-www-form-urlencoded"];
+		NSData *body = [NSData dataWithData:[bodyString dataUsingEncoding:1]];
+		[request addValue:type forHTTPHeaderField:@"Content-Type"];
+		[request setHTTPBody:body];
+		[request setHTTPMethod:@"POST"];
+	}
 	
 	NSData *response = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
 	NSString *data = [[NSString alloc] initWithData:response 
 										   encoding:NSUTF8StringEncoding];
 	
-	NSDictionary *result = [data JSONValue];
-	NSArray *orders_ = [result objectForKey:@"orders"];
-	orders = orders_;
+	return [data JSONValue];
+}
+-(void)getOpenOrders:(NSMutableDictionary*)userData
+{
+	NSAutoreleasePool *pool = [NSAutoreleasePool new];
+	
+	NSString *url = @"https://mtgox.com/code/getOrders.php";
+	NSString *bodyString = [NSString stringWithFormat:@"name=%@&pass=%@", [userData objectForKey:@"username"], [userData objectForKey:@"password"]];
+	
+	NSDictionary* result;
+	@try {
+		result = [self sendRequest:url withBodyString:bodyString];
+	}
+	@catch (NSException * e) {
+		NSLog(@"Error while getting OpenOrders: %@", e);
+	}
+	
+	if (result == nil) {
+		return;
+	}
+	
+	NSArray *orders = [result objectForKey:@"orders"];
 	
 	if(delegate && [delegate respondsToSelector:@selector(gonxController:ReceivedOpenOrders:)]) {
-		[delegate gonxController:self ReceivedOpenOrders: orders_];
+		[delegate gonxController:self ReceivedOpenOrders: orders];
 	}
 	
 	[pool drain];
@@ -69,40 +81,53 @@
 -(void)getPrices
 {
 	NSAutoreleasePool *pool = [NSAutoreleasePool new];
+
 	//getting the actual sell and bid values
-	NSURL *url = [ NSURL URLWithString: [ NSString stringWithFormat: @"https://mtgox.com/code/data/ticker.php"] ]; 
-	NSString *test = [NSString stringWithContentsOfURL:url
-											  encoding:1
-												 error:NULL];
+	NSString *url = @"https://mtgox.com/code/data/ticker.php";
 	
-	NSDictionary *result;
 	
-	result = [test JSONValue];
+	NSDictionary* result;
+	@try {
+		result = [self sendRequest:url withBodyString:nil];
+	}
+	@catch (NSException * e) {
+		NSLog(@"Error while getting Prices: %@", e);
+	}
+	
+	if (result == nil) {
+		if(delegate && [delegate respondsToSelector:@selector(gonxControllerStoppedGettingPrices:)])
+		{
+			[delegate gonxControllerStoppedGettingPrices:self];
+		}
+		return;
+	}
+	
 	result = [result objectForKey:@"ticker"];
 	if (delegate && [delegate respondsToSelector:@selector(gonxController:ReceivedPrices:)]) {
 		[delegate gonxController:self ReceivedPrices:result];
 	}
-	
+		
 	[pool drain];
 }
 -(void)getBalance:(NSMutableDictionary *)userData
 {
 	NSAutoreleasePool *pool = [NSAutoreleasePool new];
 	
-	NSURL *url = [ NSURL URLWithString: @"https://mtgox.com/code/getFunds.php"];
-	NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-	NSString *type = [NSString stringWithString:@"application/x-www-form-urlencoded"];
+	NSString *url = @"https://mtgox.com/code/getFunds.php";
 	NSString *bodyString = [NSString stringWithFormat:@"name=%@&pass=%@", [userData objectForKey:@"username"], [userData objectForKey:@"password"]];
-	NSData *body = [NSData dataWithData:[bodyString dataUsingEncoding:1]];
-	[request addValue:type forHTTPHeaderField:@"Content-Type"];
-	[request setHTTPBody:body];
-	[request setHTTPMethod:@"POST"];
 	
-	NSData *response = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
-	NSString *data = [[NSString alloc] initWithData:response 
-										   encoding:NSUTF8StringEncoding];
+	NSDictionary* result;
+	@try {
+		result = [self sendRequest:url withBodyString:bodyString];
+	}
+	@catch (NSException * e) {
+		NSLog(@"Error while getting Balance: %@", e);
+	}
 	
-	NSDictionary *result = [data JSONValue];
+	if (result == nil) {
+		return;
+	}
+	
 	
 	if(delegate && [delegate respondsToSelector:@selector(gonxController:ReceivedBalance:)]) {
 		[delegate gonxController:self ReceivedBalance: result];
@@ -126,17 +151,20 @@
 {
 	NSAutoreleasePool *pool = [NSAutoreleasePool new];
 	
-	NSURL *url = [ NSURL URLWithString: [NSString stringWithFormat: @"https://mtgox.com/code/%@BTC.php", [data objectForKey:@"type"]]];
-	
-	NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-	NSString *type = [NSString stringWithString:@"application/x-www-form-urlencoded"];
+	NSString *url = [NSString stringWithFormat:@"https://mtgox.com/code/%@BTC.php", [data objectForKey:@"type"]];
 	NSString *bodyString = [NSString stringWithFormat:@"name=%@&pass=%@&amount=%@&price=%@", [data objectForKey:@"username"], [data objectForKey:@"password"], [data objectForKey:@"amount"], [data objectForKey:@"price"]];
-	NSData *body = [NSData dataWithData:[bodyString dataUsingEncoding:1]];
-	[request addValue:type forHTTPHeaderField:@"Content-Type"];
-	[request setHTTPBody:body];
-	[request setHTTPMethod:@"POST"];
+
+	NSDictionary* result;
+	@try {
+		result = [self sendRequest:url withBodyString:bodyString];
+	}
+	@catch (NSException * e) {
+		NSLog(@"Error while Placing Order: %@", e);
+	}
 	
-	[NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+	if (result == nil) {
+		return;
+	}	
 	
 	if(delegate && [delegate respondsToSelector:@selector(gonxControllerPlacedAnOrder:)])
 	{

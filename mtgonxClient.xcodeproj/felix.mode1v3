@@ -271,7 +271,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>3</integer>
+									<integer>8</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
@@ -314,7 +314,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>Controller.m</string>
+								<string>MTGONXController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -322,11 +322,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>Controller.m</string>
+										<string>MTGONXController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>DC1D114F13A6466900E506E9</string>
+										<string>DC1D11D113A6A3BA00E506E9</string>
 										<key>history</key>
 										<array>
 											<string>DCEF6C2B13A277380023DAA5</string>
@@ -338,12 +338,12 @@
 											<string>DC1D0F0A13A52BD100E506E9</string>
 											<string>DC1D0F0B13A52BD100E506E9</string>
 											<string>DC1D0F4213A5428300E506E9</string>
-											<string>DC1D107213A6388D00E506E9</string>
 											<string>DC1D107B13A6396800E506E9</string>
-											<string>DC1D110913A640E500E506E9</string>
-											<string>DC1D110C13A6420A00E506E9</string>
-											<string>DC1D111913A642B800E506E9</string>
-											<string>DC1D114913A6451800E506E9</string>
+											<string>DC1D117F13A69BC900E506E9</string>
+											<string>DC1D11BA13A6A10C00E506E9</string>
+											<string>DC1D11BB13A6A10C00E506E9</string>
+											<string>DC1D11C613A6A2C800E506E9</string>
+											<string>DC1D11CE13A6A36000E506E9</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -552,13 +552,12 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>DC1D115013A6466900E506E9</string>
 		<string>DC1D0D8B13A50E0700E506E9</string>
 		<string>DC1D0D8C13A50E0700E506E9</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>DCEF6BA513A26C470023DAA5</string>
-		<string>/Volumes/Data/Users/felix/Projects/mtgonxClient/mtgonxClient.xcodeproj</string>
 		<string>1C78EAAD065D492600B07095</string>
+		<string>/Volumes/Data/Users/felix/Projects/mtgonxClient/mtgonxClient.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>0 118 1280 660 0 0 1280 778 </string>
@@ -582,7 +581,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>MTGONXController.m</string>
+								<string>JSON.h</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>

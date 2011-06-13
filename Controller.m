@@ -100,6 +100,12 @@
 	[self getOpenOrders:self];
 	[self getBalance:self];
 }
+-(void)gonxControllerStoppedGettingPrices:(MTGONXController *)sender
+{
+	[refreshButton setTitle:@"Get Prices"];
+	[refreshButton display];
+	refreshPrices = FALSE;
+}
 -(IBAction)buyButtonPressed:(id)sender
 {
 	[gonx startPlacingOrder:[username stringValue] 
