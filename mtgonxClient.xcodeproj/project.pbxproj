@@ -12,6 +12,7 @@
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		DC1D124213A6B00400E506E9 /* README in Resources */ = {isa = PBXBuildFile; fileRef = DC1D124113A6B00400E506E9 /* README */; };
 		DC247B2D13A503A700AA71B9 /* Order.m in Sources */ = {isa = PBXBuildFile; fileRef = DC247B2C13A503A700AA71B9 /* Order.m */; };
 		DC7E55F313A3851300B35426 /* MTGONXController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7E55F213A3851300B35426 /* MTGONXController.m */; };
 		DCEF6BAC13A26C820023DAA5 /* Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = DCEF6BAB13A26C820023DAA5 /* Controller.m */; };
@@ -42,6 +43,7 @@
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		8D1107310486CEB800E47090 /* mtgonxClient-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "mtgonxClient-Info.plist"; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* mtgonxClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mtgonxClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC1D124113A6B00400E506E9 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 		DC247B2B13A503A700AA71B9 /* Order.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Order.h; sourceTree = "<group>"; };
 		DC247B2C13A503A700AA71B9 /* Order.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Order.m; sourceTree = "<group>"; };
 		DC7E55F113A3851300B35426 /* MTGONXController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTGONXController.h; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
+				DC1D124113A6B00400E506E9 /* README */,
 			);
 			name = mtgonxClient;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 			files = (
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 				1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */,
+				DC1D124213A6B00400E506E9 /* README in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
