@@ -1,0 +1,391 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
+		256AC3DA0F4B6AC300CF3369 /* mtgonxClientAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 256AC3D90F4B6AC300CF3369 /* mtgonxClientAppDelegate.m */; };
+		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
+		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
+		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		DC247B2D13A503A700AA71B9 /* Order.m in Sources */ = {isa = PBXBuildFile; fileRef = DC247B2C13A503A700AA71B9 /* Order.m */; };
+		DC7E55F313A3851300B35426 /* MTGONXController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7E55F213A3851300B35426 /* MTGONXController.m */; };
+		DCEF6BAC13A26C820023DAA5 /* Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = DCEF6BAB13A26C820023DAA5 /* Controller.m */; };
+		DCEF6BF013A273370023DAA5 /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = DCEF6BD813A273370023DAA5 /* NSObject+SBJson.m */; };
+		DCEF6BF113A273370023DAA5 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = DCEF6BDB13A273370023DAA5 /* SBJsonParser.m */; };
+		DCEF6BF213A273370023DAA5 /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = DCEF6BDD13A273370023DAA5 /* SBJsonStreamParser.m */; };
+		DCEF6BF313A273370023DAA5 /* SBJsonStreamParserAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = DCEF6BDF13A273370023DAA5 /* SBJsonStreamParserAccumulator.m */; };
+		DCEF6BF413A273370023DAA5 /* SBJsonStreamParserAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = DCEF6BE113A273370023DAA5 /* SBJsonStreamParserAdapter.m */; };
+		DCEF6BF513A273370023DAA5 /* SBJsonStreamParserState.m in Sources */ = {isa = PBXBuildFile; fileRef = DCEF6BE313A273370023DAA5 /* SBJsonStreamParserState.m */; };
+		DCEF6BF613A273370023DAA5 /* SBJsonStreamWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = DCEF6BE513A273370023DAA5 /* SBJsonStreamWriter.m */; };
+		DCEF6BF713A273370023DAA5 /* SBJsonStreamWriterAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = DCEF6BE713A273370023DAA5 /* SBJsonStreamWriterAccumulator.m */; };
+		DCEF6BF813A273370023DAA5 /* SBJsonStreamWriterState.m in Sources */ = {isa = PBXBuildFile; fileRef = DCEF6BE913A273370023DAA5 /* SBJsonStreamWriterState.m */; };
+		DCEF6BF913A273370023DAA5 /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = DCEF6BEB13A273370023DAA5 /* SBJsonTokeniser.m */; };
+		DCEF6BFA13A273370023DAA5 /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = DCEF6BED13A273370023DAA5 /* SBJsonUTF8Stream.m */; };
+		DCEF6BFB13A273370023DAA5 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = DCEF6BEF13A273370023DAA5 /* SBJsonWriter.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+		1DDD58150DA1D0A300B32029 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		256AC3D80F4B6AC300CF3369 /* mtgonxClientAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mtgonxClientAppDelegate.h; sourceTree = "<group>"; };
+		256AC3D90F4B6AC300CF3369 /* mtgonxClientAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mtgonxClientAppDelegate.m; sourceTree = "<group>"; };
+		256AC3F00F4B6AF500CF3369 /* mtgonxClient_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mtgonxClient_Prefix.pch; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		8D1107310486CEB800E47090 /* mtgonxClient-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "mtgonxClient-Info.plist"; sourceTree = "<group>"; };
+		8D1107320486CEB800E47090 /* mtgonxClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mtgonxClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC247B2B13A503A700AA71B9 /* Order.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Order.h; sourceTree = "<group>"; };
+		DC247B2C13A503A700AA71B9 /* Order.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Order.m; sourceTree = "<group>"; };
+		DC7E55F113A3851300B35426 /* MTGONXController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTGONXController.h; sourceTree = "<group>"; };
+		DC7E55F213A3851300B35426 /* MTGONXController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTGONXController.m; sourceTree = "<group>"; };
+		DCEF6BAA13A26C820023DAA5 /* Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Controller.h; sourceTree = "<group>"; };
+		DCEF6BAB13A26C820023DAA5 /* Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Controller.m; sourceTree = "<group>"; };
+		DCEF6BD613A273370023DAA5 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
+		DCEF6BD713A273370023DAA5 /* NSObject+SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJson.h"; sourceTree = "<group>"; };
+		DCEF6BD813A273370023DAA5 /* NSObject+SBJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJson.m"; sourceTree = "<group>"; };
+		DCEF6BD913A273370023DAA5 /* SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJson.h; sourceTree = "<group>"; };
+		DCEF6BDA13A273370023DAA5 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
+		DCEF6BDB13A273370023DAA5 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
+		DCEF6BDC13A273370023DAA5 /* SBJsonStreamParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParser.h; sourceTree = "<group>"; };
+		DCEF6BDD13A273370023DAA5 /* SBJsonStreamParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParser.m; sourceTree = "<group>"; };
+		DCEF6BDE13A273370023DAA5 /* SBJsonStreamParserAccumulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserAccumulator.h; sourceTree = "<group>"; };
+		DCEF6BDF13A273370023DAA5 /* SBJsonStreamParserAccumulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserAccumulator.m; sourceTree = "<group>"; };
+		DCEF6BE013A273370023DAA5 /* SBJsonStreamParserAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserAdapter.h; sourceTree = "<group>"; };
+		DCEF6BE113A273370023DAA5 /* SBJsonStreamParserAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserAdapter.m; sourceTree = "<group>"; };
+		DCEF6BE213A273370023DAA5 /* SBJsonStreamParserState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserState.h; sourceTree = "<group>"; };
+		DCEF6BE313A273370023DAA5 /* SBJsonStreamParserState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserState.m; sourceTree = "<group>"; };
+		DCEF6BE413A273370023DAA5 /* SBJsonStreamWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriter.h; sourceTree = "<group>"; };
+		DCEF6BE513A273370023DAA5 /* SBJsonStreamWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriter.m; sourceTree = "<group>"; };
+		DCEF6BE613A273370023DAA5 /* SBJsonStreamWriterAccumulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriterAccumulator.h; sourceTree = "<group>"; };
+		DCEF6BE713A273370023DAA5 /* SBJsonStreamWriterAccumulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriterAccumulator.m; sourceTree = "<group>"; };
+		DCEF6BE813A273370023DAA5 /* SBJsonStreamWriterState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriterState.h; sourceTree = "<group>"; };
+		DCEF6BE913A273370023DAA5 /* SBJsonStreamWriterState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriterState.m; sourceTree = "<group>"; };
+		DCEF6BEA13A273370023DAA5 /* SBJsonTokeniser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonTokeniser.h; sourceTree = "<group>"; };
+		DCEF6BEB13A273370023DAA5 /* SBJsonTokeniser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonTokeniser.m; sourceTree = "<group>"; };
+		DCEF6BEC13A273370023DAA5 /* SBJsonUTF8Stream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonUTF8Stream.h; sourceTree = "<group>"; };
+		DCEF6BED13A273370023DAA5 /* SBJsonUTF8Stream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonUTF8Stream.m; sourceTree = "<group>"; };
+		DCEF6BEE13A273370023DAA5 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
+		DCEF6BEF13A273370023DAA5 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D11072E0486CEB800E47090 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				DCEF6BAA13A26C820023DAA5 /* Controller.h */,
+				DCEF6BAB13A26C820023DAA5 /* Controller.m */,
+				DCEF6BD513A273370023DAA5 /* json */,
+				256AC3D80F4B6AC300CF3369 /* mtgonxClientAppDelegate.h */,
+				256AC3D90F4B6AC300CF3369 /* mtgonxClientAppDelegate.m */,
+				DC7E55F113A3851300B35426 /* MTGONXController.h */,
+				DC7E55F213A3851300B35426 /* MTGONXController.m */,
+				DC247B2B13A503A700AA71B9 /* Order.h */,
+				DC247B2C13A503A700AA71B9 /* Order.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
+				13E42FB307B3F0F600E4EEF1 /* CoreData.framework */,
+				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D1107320486CEB800E47090 /* mtgonxClient.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* mtgonxClient */ = {
+			isa = PBXGroup;
+			children = (
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = mtgonxClient;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				256AC3F00F4B6AF500CF3369 /* mtgonxClient_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8D1107310486CEB800E47090 /* mtgonxClient-Info.plist */,
+				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
+				1DDD58140DA1D0A300B32029 /* MainMenu.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
+				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DCEF6BD513A273370023DAA5 /* json */ = {
+			isa = PBXGroup;
+			children = (
+				DCEF6BD613A273370023DAA5 /* JSON.h */,
+				DCEF6BD713A273370023DAA5 /* NSObject+SBJson.h */,
+				DCEF6BD813A273370023DAA5 /* NSObject+SBJson.m */,
+				DCEF6BD913A273370023DAA5 /* SBJson.h */,
+				DCEF6BDA13A273370023DAA5 /* SBJsonParser.h */,
+				DCEF6BDB13A273370023DAA5 /* SBJsonParser.m */,
+				DCEF6BDC13A273370023DAA5 /* SBJsonStreamParser.h */,
+				DCEF6BDD13A273370023DAA5 /* SBJsonStreamParser.m */,
+				DCEF6BDE13A273370023DAA5 /* SBJsonStreamParserAccumulator.h */,
+				DCEF6BDF13A273370023DAA5 /* SBJsonStreamParserAccumulator.m */,
+				DCEF6BE013A273370023DAA5 /* SBJsonStreamParserAdapter.h */,
+				DCEF6BE113A273370023DAA5 /* SBJsonStreamParserAdapter.m */,
+				DCEF6BE213A273370023DAA5 /* SBJsonStreamParserState.h */,
+				DCEF6BE313A273370023DAA5 /* SBJsonStreamParserState.m */,
+				DCEF6BE413A273370023DAA5 /* SBJsonStreamWriter.h */,
+				DCEF6BE513A273370023DAA5 /* SBJsonStreamWriter.m */,
+				DCEF6BE613A273370023DAA5 /* SBJsonStreamWriterAccumulator.h */,
+				DCEF6BE713A273370023DAA5 /* SBJsonStreamWriterAccumulator.m */,
+				DCEF6BE813A273370023DAA5 /* SBJsonStreamWriterState.h */,
+				DCEF6BE913A273370023DAA5 /* SBJsonStreamWriterState.m */,
+				DCEF6BEA13A273370023DAA5 /* SBJsonTokeniser.h */,
+				DCEF6BEB13A273370023DAA5 /* SBJsonTokeniser.m */,
+				DCEF6BEC13A273370023DAA5 /* SBJsonUTF8Stream.h */,
+				DCEF6BED13A273370023DAA5 /* SBJsonUTF8Stream.m */,
+				DCEF6BEE13A273370023DAA5 /* SBJsonWriter.h */,
+				DCEF6BEF13A273370023DAA5 /* SBJsonWriter.m */,
+			);
+			path = json;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8D1107260486CEB800E47090 /* mtgonxClient */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "mtgonxClient" */;
+			buildPhases = (
+				8D1107290486CEB800E47090 /* Resources */,
+				8D11072C0486CEB800E47090 /* Sources */,
+				8D11072E0486CEB800E47090 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = mtgonxClient;
+			productInstallPath = "$(HOME)/Applications";
+			productName = mtgonxClient;
+			productReference = 8D1107320486CEB800E47090 /* mtgonxClient.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "mtgonxClient" */;
+			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* mtgonxClient */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D1107260486CEB800E47090 /* mtgonxClient */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D1107290486CEB800E47090 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
+				1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D11072C0486CEB800E47090 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072D0486CEB800E47090 /* main.m in Sources */,
+				256AC3DA0F4B6AC300CF3369 /* mtgonxClientAppDelegate.m in Sources */,
+				DCEF6BAC13A26C820023DAA5 /* Controller.m in Sources */,
+				DCEF6BF013A273370023DAA5 /* NSObject+SBJson.m in Sources */,
+				DCEF6BF113A273370023DAA5 /* SBJsonParser.m in Sources */,
+				DCEF6BF213A273370023DAA5 /* SBJsonStreamParser.m in Sources */,
+				DCEF6BF313A273370023DAA5 /* SBJsonStreamParserAccumulator.m in Sources */,
+				DCEF6BF413A273370023DAA5 /* SBJsonStreamParserAdapter.m in Sources */,
+				DCEF6BF513A273370023DAA5 /* SBJsonStreamParserState.m in Sources */,
+				DCEF6BF613A273370023DAA5 /* SBJsonStreamWriter.m in Sources */,
+				DCEF6BF713A273370023DAA5 /* SBJsonStreamWriterAccumulator.m in Sources */,
+				DCEF6BF813A273370023DAA5 /* SBJsonStreamWriterState.m in Sources */,
+				DCEF6BF913A273370023DAA5 /* SBJsonTokeniser.m in Sources */,
+				DCEF6BFA13A273370023DAA5 /* SBJsonUTF8Stream.m in Sources */,
+				DCEF6BFB13A273370023DAA5 /* SBJsonWriter.m in Sources */,
+				DC7E55F313A3851300B35426 /* MTGONXController.m in Sources */,
+				DC247B2D13A503A700AA71B9 /* Order.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		089C165CFE840E0CC02AAC07 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089C165DFE840E0CC02AAC07 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		1DDD58140DA1D0A300B32029 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1DDD58150DA1D0A300B32029 /* English */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C01FCF4B08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = mtgonxClient_Prefix.pch;
+				INFOPLIST_FILE = "mtgonxClient-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_NAME = mtgonxClient;
+			};
+			name = Debug;
+		};
+		C01FCF4C08A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = mtgonxClient_Prefix.pch;
+				INFOPLIST_FILE = "mtgonxClient-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_NAME = mtgonxClient;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.6;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.6;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "mtgonxClient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4B08A954540054247B /* Debug */,
+				C01FCF4C08A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "mtgonxClient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}
