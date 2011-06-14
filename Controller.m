@@ -61,7 +61,7 @@
 {
 	[gonx startGettingOpenOrders:[username stringValue] andPassword:[password stringValue]];
 }
--(int)numberOfRowsInTableView:(NSTableView *)tableView
+-(NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
 {
 	return [openOrders count];
 }
