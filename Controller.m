@@ -13,16 +13,30 @@
 -(id)init
 {
 	[super init];
+    
+    //initiaiting the controller
 	gonx = [[MTGONXController alloc] init];
 	[gonx setDelegate:self];
 	refreshPrices = FALSE;
+    isLoggedIn = FALSE;
 	
 	return self;
+}
+-(void)awakeFromNib
+{
+    [mainWindow setFrame:[loginView frame] display:TRUE animate:TRUE];
+    [mainWindow setContentView:loginView];
+}
+
+-(IBAction)loginButtonPressed:(id)sender
+{
+    [gonx startGettingBalance:[loginUsername stringValue] andPassword:[loginPassword stringValue]]; //is used for checking logindata
 }
 
 -(void)gonxController:(MTGONXController *)sender ReceivedPrices:(NSDictionary *)prices{
 	[sell setStringValue:[prices objectForKey:@"sell"]];
 	[buy setStringValue:[prices objectForKey:@"buy"]];
+    NSLog(@"%@", [NSCalendarDate date]);
 	
 	if(refreshPrices)
 	{
@@ -34,6 +48,15 @@
 {
 	[balanceUSD setStringValue:[balances objectForKey:@"usds"]];
 	[balanceBTC	setStringValue:[balances objectForKey:@"btcs"]];
+    
+    if(!isLoggedIn) //check for login process
+    {
+        [mainWindow setFrame:[mainView frame] display:TRUE animate:TRUE];
+        [mainWindow setContentView:mainView];
+        
+        isLoggedIn = TRUE;
+    }
+    
 }
 -(void)gonxController:(MTGONXController *)sender ReceivedOpenOrders:(NSArray *)orders
 {
@@ -42,7 +65,7 @@
 }
 -(IBAction)getBalance:(id)sender
 {
-	[gonx startGettingBalance:[username stringValue] andPassword:[password stringValue]];
+	[gonx startGettingBalance:[loginUsername stringValue] andPassword:[loginPassword stringValue]];
 }
 -(IBAction)getPrices:(id)sender
 {
@@ -59,7 +82,7 @@
 }
 -(IBAction)getOpenOrders:(id)sender
 {
-	[gonx startGettingOpenOrders:[username stringValue] andPassword:[password stringValue]];
+	[gonx startGettingOpenOrders:[loginUsername stringValue] andPassword:[loginPassword stringValue]];
 }
 -(NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
 {
@@ -72,6 +95,8 @@
 	value = [record objectForKey:[tableColumn identifier]];
 	
 	NSString *column = [[tableColumn identifier] description];
+    
+    //replacing api codes with readable strings
 	if([column isEqual:@"type"])
 	{
 		if ([[value description] intValue] == 1) {
@@ -97,6 +122,7 @@
 }
 -(void)gonxControllerPlacedAnOrder:(MTGONXController *)sender
 {
+    //refreshing the gui values
 	[self getOpenOrders:self];
 	[self getBalance:self];
 }
@@ -106,18 +132,24 @@
 	[refreshButton display];
 	refreshPrices = FALSE;
 }
+-(void)gonxControllerCouldNotLogin:(MTGONXController *)sender
+{
+    //chaning colos of username/password box to red if login fails
+    [loginUsername setBackgroundColor: [NSColor colorWithCalibratedRed:1.0 green:0.0 blue:0.0 alpha:1.0]];
+    [loginPassword setBackgroundColor: [NSColor colorWithCalibratedRed:1.0 green:0.0 blue:0.0 alpha:1.0]];
+}
 -(IBAction)buyButtonPressed:(id)sender
 {
-	[gonx startPlacingOrderWithUsername:[username stringValue] 
-				andPassword:[password stringValue]
+	[gonx startPlacingOrderWithUsername:[loginUsername stringValue] 
+				andPassword:[loginPassword stringValue]
 				  andAmount:[amount stringValue]
 					andType:@"buy"
 				   andPrice:[price stringValue]];
 }
 -(IBAction)sellButtonPressed:(id)sender
 {
-	[gonx startPlacingOrderWithUsername:[username stringValue] 
-				andPassword:[password stringValue]
+	[gonx startPlacingOrderWithUsername:[loginUsername stringValue] 
+				andPassword:[loginPassword stringValue]
 				  andAmount:[amount stringValue]
 					andType:@"sell"
 				   andPrice:[price stringValue]];

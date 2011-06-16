@@ -10,8 +10,6 @@
 
 @interface mtgonxClientAppDelegate : NSObject <NSApplicationDelegate> {
     NSWindow *window;
-	IBOutlet NSTextField *username;
-	IBOutlet NSTextField *password;
 }
 
 @property (assign) IBOutlet NSWindow *window;

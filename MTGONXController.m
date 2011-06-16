@@ -39,17 +39,18 @@
 	
 	if (bodyString != nil) {
 		NSString *type = [NSString stringWithString:@"application/x-www-form-urlencoded"];
-		NSData *body = [NSData dataWithData:[bodyString dataUsingEncoding:1]];
+		NSData *body = [NSData dataWithData:[bodyString dataUsingEncoding:2]];
 		[request addValue:type forHTTPHeaderField:@"Content-Type"];
 		[request setHTTPBody:body];
 		[request setHTTPMethod:@"POST"];
 	}
-	
-	NSData *response = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+    
+    NSData *response = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+    
 	NSString *data = [[NSString alloc] initWithData:response 
 										   encoding:NSUTF8StringEncoding];
-	
-	return [data JSONValue];
+
+    return [data JSONValue];
 }
 -(void)getOpenOrders:(NSMutableDictionary*)userData
 {
@@ -58,15 +59,10 @@
 	NSString *url = @"https://mtgox.com/code/getOrders.php";
 	NSString *bodyString = [NSString stringWithFormat:@"name=%@&pass=%@", [userData objectForKey:@"username"], [userData objectForKey:@"password"]];
 	
-	NSDictionary* result;
-	@try {
-		result = [self sendRequest:url withBodyString:bodyString];
-	}
-	@catch (NSException * e) {
-		NSLog(@"Error while getting OpenOrders: %@", e);
-	}
+	NSDictionary* result = [self sendRequest:url withBodyString:bodyString];
 	
 	if (result == nil) {
+        NSLog(@"Error while getting OpenOrders");
 		return;
 	}
 	
@@ -86,15 +82,10 @@
 	NSString *url = @"https://mtgox.com/code/data/ticker.php";
 	
 	
-	NSDictionary* result;
-	@try {
-		result = [self sendRequest:url withBodyString:nil];
-	}
-	@catch (NSException * e) {
-		NSLog(@"Error while getting Prices: %@", e);
-	}
+	NSDictionary* result = [self sendRequest:url withBodyString:nil];
 	
 	if (result == nil) {
+        NSLog(@"Stopped getting Prices");
 		if(delegate && [delegate respondsToSelector:@selector(gonxControllerStoppedGettingPrices:)])
 		{
 			[delegate gonxControllerStoppedGettingPrices:self];
@@ -116,23 +107,29 @@
 	NSString *url = @"https://mtgox.com/code/getFunds.php";
 	NSString *bodyString = [NSString stringWithFormat:@"name=%@&pass=%@", [userData objectForKey:@"username"], [userData objectForKey:@"password"]];
 	
-	NSDictionary* result;
-	@try {
-		result = [self sendRequest:url withBodyString:bodyString];
-	}
-	@catch (NSException * e) {
-		NSLog(@"Error while getting Balance: %@", e);
-	}
+	NSDictionary* result = [self sendRequest:url withBodyString:bodyString];
 	
 	if (result == nil) {
+        NSLog(@"Error while getting Balance");
 		return;
 	}
 	
+    NSLog(@"%@", result);
 	
-	if(delegate && [delegate respondsToSelector:@selector(gonxController:ReceivedBalance:)]) {
-		[delegate gonxController:self ReceivedBalance: result];
-	}
-	
+    //check if logn was correct
+    NSString *error = [result objectForKey:@"error"];
+    if (error != nil) {
+        NSLog(@"Login was incorrect!");
+        if(delegate && [delegate respondsToSelector:@selector(gonxControllerCouldNotLogin:)]) {
+            [delegate gonxControllerCouldNotLogin:self];
+        }
+    }
+    else {
+        if(delegate && [delegate respondsToSelector:@selector(gonxController:ReceivedBalance:)]) {
+            [delegate gonxController:self ReceivedBalance: result];
+        }
+    }
+    
 	[pool drain];
 }
 -(void)startPlacingOrderWithUsername:(NSString *)username andPassword:(NSString *)password andAmount:(NSString *)amount andType:(NSString *)type andPrice:(NSString*)price
@@ -154,15 +151,10 @@
 	NSString *url = [NSString stringWithFormat:@"https://mtgox.com/code/%@BTC.php", [data objectForKey:@"type"]];
 	NSString *bodyString = [NSString stringWithFormat:@"name=%@&pass=%@&amount=%@&price=%@", [data objectForKey:@"username"], [data objectForKey:@"password"], [data objectForKey:@"amount"], [data objectForKey:@"price"]];
 
-	NSDictionary* result;
-	@try {
-		result = [self sendRequest:url withBodyString:bodyString];
-	}
-	@catch (NSException * e) {
-		NSLog(@"Error while Placing Order: %@", e);
-	}
+	NSDictionary* result = [self sendRequest:url withBodyString:bodyString];
 	
 	if (result == nil) {
+        NSLog(@"Error while Placing Order");
 		return;
 	}	
 	

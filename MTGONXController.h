@@ -13,17 +13,22 @@
 	id delegate;
 }
 -(NSDictionary*)sendRequest:(NSString*)url 
-		  withBodyString:(NSString*)bodyString;
+             withBodyString:(NSString*)bodyString;
+
 -(void)startGettingBalance:(NSString*)username
 			   andPassword:(NSString*)password;
+
 -(void)startGettingPrices;
+
 -(void)startGettingOpenOrders:(NSString*)username
 				  andPassword:(NSString*)password;
+
 -(void)startPlacingOrderWithUsername:(NSString*)username 
-			 andPassword:(NSString*)password 
-			   andAmount:(NSString*)amount  
-				 andType:(NSString*)type
-				andPrice:(NSString*)price;
+                         andPassword:(NSString*)password 
+                           andAmount:(NSString*)amount 
+                             andType:(NSString*)type
+                            andPrice:(NSString*)price;
+
 -(void)getBalance:(NSDictionary*)userData;
 -(void)getPrices;
 -(void)placeOrder:(NSDictionary*)data;
@@ -37,11 +42,16 @@
 
 -(void)gonxController:(MTGONXController*)sender 
 	  ReceivedBalance:(NSDictionary*)balances;
+
 -(void)gonxController:(MTGONXController *)sender 
 	   ReceivedPrices:(NSDictionary *)prices;
+
 -(void)gonxController:(MTGONXController*)sender
    ReceivedOpenOrders:(NSArray*)orders;
+
 -(void)gonxControllerPlacedAnOrder:(MTGONXController*)sender;
+
 -(void)gonxControllerStoppedGettingPrices:(MTGONXController*)sender;
 
+-(void)gonxControllerCouldNotLogin:(MTGONXController*)sender;
 @end
