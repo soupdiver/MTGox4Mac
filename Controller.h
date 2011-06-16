@@ -36,6 +36,8 @@
 	bool refreshPrices;
     bool isLoggedIn;
 }
+-(CGPoint)PointForCenterOriginWithFrameSize:(NSSize) size;
+
 -(IBAction)getPrices:(id)sender;
 -(IBAction)getBalance:(id)sender;
 -(IBAction)getOpenOrders:(id)sender;
