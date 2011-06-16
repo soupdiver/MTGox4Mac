@@ -22,10 +22,24 @@
 	
 	return self;
 }
+-(CGPoint)PointForCenterOriginWithFrameSize:(NSSize)size
+{
+    CGPoint result;
+    result.x = [[NSScreen mainScreen]frame].size.width / 2 - (size.width / 2);
+    result.y = [[NSScreen mainScreen]frame].size.height / 2 - (size.height / 2);
+    
+    return result;
+}
 -(void)awakeFromNib
 {
-    [mainWindow setFrame:[loginView frame] display:TRUE animate:TRUE];
+    NSRect frame = [loginView frame];
+    frame.origin = [self PointForCenterOriginWithFrameSize:frame.size];
+    
+    [mainWindow setFrame:frame display:TRUE animate:TRUE];
     [mainWindow setContentView:loginView];
+    
+    [loginUsername setStringValue:@"viech0r"];
+    [loginPassword setStringValue:@"$l!pKn0t"];
 }
 
 -(IBAction)loginButtonPressed:(id)sender
@@ -51,7 +65,12 @@
     
     if(!isLoggedIn) //check for login process
     {
-        [mainWindow setFrame:[mainView frame] display:TRUE animate:TRUE];
+        [mainView setFrameOrigin:[mainWindow frame].origin];
+        
+        NSRect frame= [mainView frame];
+        frame.origin = [self PointForCenterOriginWithFrameSize:frame.size];
+        
+        [mainWindow setFrame:frame display:TRUE animate:TRUE];
         [mainWindow setContentView:mainView];
         
         isLoggedIn = TRUE;
@@ -115,7 +134,6 @@
 		else {
 			return @"Not enough founds";
 		}
-		
 	}
 			   
 	return value;
