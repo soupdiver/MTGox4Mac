@@ -37,9 +37,6 @@
     
     [mainWindow setFrame:frame display:TRUE animate:TRUE];
     [mainWindow setContentView:loginView];
-    
-    [loginUsername setStringValue:@"viech0r"];
-    [loginPassword setStringValue:@"$l!pKn0t"];
 }
 
 -(IBAction)loginButtonPressed:(id)sender
