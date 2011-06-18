@@ -99,6 +99,8 @@
     
     if(!isLoggedIn) //check for login process
     {
+        //getting current open orders
+        [gonx   startGettingOpenOrders:[loginUsername stringValue] andPassword:[loginPassword stringValue]];
         [mainView setFrameOrigin:[mainWindow frame].origin];
         
         NSRect frame= [mainView frame];
