@@ -7,8 +7,20 @@
 //
 
 #import "Controller.h"
+#import "PreferencesController.h"
 
 @implementation Controller
+
++(void)initialize
+{
+    //setting the standard UserValues
+    NSMutableDictionary *defaultValues = [[NSMutableDictionary alloc] init];
+    [defaultValues setObject:[NSNumber numberWithInt:3] forKey:RefreshtimeKey];
+    [defaultValues setObject:@"" forKey:UsernameKey];
+    [defaultValues setObject:@"" forKey:PasswordKey];
+    
+    [[NSUserDefaults standardUserDefaults] registerDefaults:defaultValues];
+}
 
 -(id)init
 {
@@ -22,6 +34,7 @@
 	
 	return self;
 }
+
 -(CGPoint)PointForCenterOriginWithFrameSize:(NSSize)size
 {
     CGPoint result;
@@ -30,6 +43,7 @@
     
     return result;
 }
+
 -(void)awakeFromNib
 {
     NSRect frame = [loginView frame];
@@ -37,24 +51,46 @@
     
     [mainWindow setFrame:frame display:TRUE animate:TRUE];
     [mainWindow setContentView:loginView];
+    
+    [loginUsername setStringValue:[[NSUserDefaults standardUserDefaults] stringForKey:UsernameKey]];
+    [loginPassword setStringValue:[[NSUserDefaults standardUserDefaults] objectForKey:PasswordKey]];
+}
+
+-(IBAction)showPreferencesWindow:(id)sender
+{
+    if(preferenceController == nil)
+    {
+        preferenceController = [[PreferencesController alloc] init];
+    }
+    
+    [preferenceController showWindow:self];
 }
 
 -(IBAction)loginButtonPressed:(id)sender
 {
+    //check if data should be remembered
+    if ([rememberCheckbox state] == NSOnState) {
+        [[NSUserDefaults standardUserDefaults]setObject:[loginUsername stringValue] forKey:UsernameKey];
+        [[NSUserDefaults standardUserDefaults]setObject:[loginPassword stringValue] forKey:PasswordKey];
+    }
+    else {
+        [[NSUserDefaults standardUserDefaults]setObject:@"" forKey:UsernameKey];
+        [[NSUserDefaults standardUserDefaults]setObject:@"" forKey:PasswordKey];
+    }
     [gonx startGettingBalance:[loginUsername stringValue] andPassword:[loginPassword stringValue]]; //is used for checking logindata
 }
 
 -(void)gonxController:(MTGONXController *)sender ReceivedPrices:(NSDictionary *)prices{
 	[sell setStringValue:[prices objectForKey:@"sell"]];
 	[buy setStringValue:[prices objectForKey:@"buy"]];
-    NSLog(@"%@", [NSCalendarDate date]);
 	
 	if(refreshPrices)
 	{
-		sleep(3);
+		sleep([[NSUserDefaults standardUserDefaults] integerForKey:RefreshtimeKey]);
 		[gonx startGettingPrices];
 	}
 }
+
 -(void)gonxController:(MTGONXController *)sender ReceivedBalance:(NSDictionary *)balances
 {
 	[balanceUSD setStringValue:[balances objectForKey:@"usds"]];
@@ -74,15 +110,18 @@
     }
     
 }
+
 -(void)gonxController:(MTGONXController *)sender ReceivedOpenOrders:(NSArray *)orders
 {
 	openOrders = [orders copy];
 	[openOrdersTable reloadData];
 }
+
 -(IBAction)getBalance:(id)sender
 {
 	[gonx startGettingBalance:[loginUsername stringValue] andPassword:[loginPassword stringValue]];
 }
+
 -(IBAction)getPrices:(id)sender
 {
 	if(refreshPrices)
@@ -96,14 +135,17 @@
 		[gonx startGettingPrices];
 	}
 }
+
 -(IBAction)getOpenOrders:(id)sender
 {
 	[gonx startGettingOpenOrders:[loginUsername stringValue] andPassword:[loginPassword stringValue]];
 }
+
 -(NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
 {
 	return [openOrders count];
 }
+
 -(id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
 {
 	id record, value;
@@ -135,24 +177,28 @@
 			   
 	return value;
 }
+
 -(void)gonxControllerPlacedAnOrder:(MTGONXController *)sender
 {
     //refreshing the gui values
 	[self getOpenOrders:self];
 	[self getBalance:self];
 }
+
 -(void)gonxControllerStoppedGettingPrices:(MTGONXController *)sender
 {
 	[refreshButton setTitle:@"Get Prices"];
 	[refreshButton display];
 	refreshPrices = FALSE;
 }
+
 -(void)gonxControllerCouldNotLogin:(MTGONXController *)sender
 {
     //chaning colos of username/password box to red if login fails
     [loginUsername setBackgroundColor: [NSColor colorWithCalibratedRed:1.0 green:0.0 blue:0.0 alpha:1.0]];
     [loginPassword setBackgroundColor: [NSColor colorWithCalibratedRed:1.0 green:0.0 blue:0.0 alpha:1.0]];
 }
+
 -(IBAction)buyButtonPressed:(id)sender
 {
 	[gonx startPlacingOrderWithUsername:[loginUsername stringValue] 
@@ -161,6 +207,7 @@
 					andType:@"buy"
 				   andPrice:[price stringValue]];
 }
+
 -(IBAction)sellButtonPressed:(id)sender
 {
 	[gonx startPlacingOrderWithUsername:[loginUsername stringValue] 

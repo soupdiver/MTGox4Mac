@@ -9,12 +9,15 @@
 #import <Cocoa/Cocoa.h>
 #import "MTGONXController.h"
 
+@class PreferencesController;
+
 @interface Controller : NSObject <MTGONXDelegate, NSTableViewDataSource> {
     //stuff for loginView
     IBOutlet NSView *loginView;
     IBOutlet NSButton *loginButton;
     IBOutlet NSTextField *loginUsername;
     IBOutlet NSTextField *loginPassword;
+    IBOutlet NSButton *rememberCheckbox;
     
     //stuff for the main view
     IBOutlet NSView *mainView;
@@ -26,7 +29,6 @@
 	IBOutlet NSTableView *openOrdersTable;
 	IBOutlet NSTextField *amount;
 	IBOutlet NSTextField *price;
-    IBOutlet NSTextField *priceUpdate;
     
     IBOutlet NSWindow *mainWindow;
     
@@ -35,8 +37,14 @@
 	NSArray *openOrders;
 	bool refreshPrices;
     bool isLoggedIn;
+    PreferencesController *preferenceController;
 }
+
++(void)initialize;
+
 -(CGPoint)PointForCenterOriginWithFrameSize:(NSSize) size;
+
+-(IBAction)showPreferencesWindow:(id)sender;
 
 -(IBAction)getPrices:(id)sender;
 -(IBAction)getBalance:(id)sender;
