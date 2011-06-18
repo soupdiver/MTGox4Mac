@@ -15,7 +15,7 @@
 -(NSDictionary*)sendRequest:(NSString*)url 
              withBodyString:(NSString*)bodyString;
 
--(void)startGettingBalance:(NSString*)username
+-(void)startGettingBalanceWithUsername:(NSString*)username
 			   andPassword:(NSString*)password;
 
 -(void)startGettingPrices;
@@ -29,10 +29,16 @@
                              andType:(NSString*)type
                             andPrice:(NSString*)price;
 
+-(void)startCancelingOrderWithUsername:(NSString*)username
+                           andPassword:(NSString*)password
+                            andOrderId:(NSNumber*)orderId
+                          andOrderType:(NSNumber*)orderType;
+
 -(void)getBalance:(NSDictionary*)userData;
 -(void)getPrices;
 -(void)placeOrder:(NSDictionary*)data;
--(void)getOpenOrders:(NSMutableDictionary *)userData;
+-(void)getOpenOrders:(NSMutableDictionary*)userData;
+-(void)cancelOrder:(NSMutableDictionary*)userData;
 
 @property (assign) id delegate;
 
@@ -54,4 +60,6 @@
 -(void)gonxControllerStoppedGettingPrices:(MTGONXController*)sender;
 
 -(void)gonxControllerCouldNotLogin:(MTGONXController*)sender;
+
+-(void)gonxControllerCanceledOrder:(MTGONXController*)sender;
 @end

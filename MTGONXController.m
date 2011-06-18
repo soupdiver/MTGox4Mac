@@ -12,7 +12,7 @@
 @implementation MTGONXController
 @synthesize delegate;
 
--(void) startGettingBalance:(NSString *)username andPassword:(NSString *)password
+-(void) startGettingBalanceWithUsername:(NSString *)username andPassword:(NSString *)password
 {
 	NSMutableDictionary *userData = [[NSMutableDictionary alloc] init];
 	[userData setObject:username forKey:@"username"];
@@ -20,10 +20,12 @@
 	
 	[self performSelectorInBackground:@selector(getBalance:) withObject:userData];
 }
+
 -(void)startGettingPrices
 {
 	[self performSelectorInBackground:@selector(getPrices) withObject:nil];
 }
+
 -(void)startGettingOpenOrders:(NSString *)username andPassword:(NSString *)password
 {
 	NSMutableDictionary *userData = [[NSMutableDictionary alloc]init];
@@ -32,6 +34,7 @@
 	
 	[self performSelectorInBackground:@selector(getOpenOrders:) withObject:userData];
 }
+
 -(NSDictionary*)sendRequest:(NSString *)url_ withBodyString:(NSString *)bodyString
 {
 	NSURL *url = [ NSURL URLWithString: url_];
@@ -52,6 +55,7 @@
 
     return [data JSONValue];
 }
+
 -(void)getOpenOrders:(NSMutableDictionary*)userData
 {
 	NSAutoreleasePool *pool = [NSAutoreleasePool new];
@@ -74,6 +78,7 @@
 	
 	[pool drain];
 }
+
 -(void)getPrices
 {
 	NSAutoreleasePool *pool = [NSAutoreleasePool new];
@@ -100,6 +105,7 @@
 		
 	[pool drain];
 }
+
 -(void)getBalance:(NSMutableDictionary *)userData
 {
 	NSAutoreleasePool *pool = [NSAutoreleasePool new];
@@ -132,6 +138,7 @@
     
 	[pool drain];
 }
+
 -(void)startPlacingOrderWithUsername:(NSString *)username andPassword:(NSString *)password andAmount:(NSString *)amount andType:(NSString *)type andPrice:(NSString*)price
 {
 	NSMutableDictionary	*data = [[NSMutableDictionary alloc] init];
@@ -144,6 +151,7 @@
 	
 	[self performSelectorInBackground:@selector(placeOrder:) withObject:data];
 }
+
 -(void)placeOrder:(NSDictionary *)data
 {
 	NSAutoreleasePool *pool = [NSAutoreleasePool new];
@@ -164,5 +172,40 @@
 	}
 	
 	[pool drain];
+}
+
+-(void)startCancelingOrderWithUsername:(NSString *)username 
+                           andPassword:(NSString *)password 
+                            andOrderId:(NSNumber *)orderId
+                          andOrderType:(NSNumber *)orderType
+{
+    NSMutableDictionary	*data = [[NSMutableDictionary alloc] init];
+	
+	[data setObject:username forKey:@"username"];
+	[data setObject:password forKey:@"password"];
+    [data setObject:orderId forKey:@"orderId"];
+    [data setObject:orderType forKey:@"orderType"];
+    
+    [self performSelectorInBackground:@selector(cancelOrder:) withObject:data];
+}
+
+-(void)cancelOrder:(NSMutableDictionary *)userData
+{
+    NSAutoreleasePool *pool = [NSAutoreleasePool new];
+	
+    NSLog(@"%@", [userData objectForKey:@"username"]);
+    NSLog(@"%@", [userData objectForKey:@"orderType"]);
+    
+	NSString *url = [NSString stringWithString:@"https://mtgox.com/code/cancelOrder.php"];
+	NSString *bodyString = [NSString stringWithFormat:@"name=%@&pass=%@&oid=%@&type=%@", [userData objectForKey:@"username"], [userData objectForKey:@"password"], [userData objectForKey:@"orderId"], [userData objectForKey:@"orderType"]];
+    
+    [self sendRequest:url withBodyString:bodyString];
+    
+    if(delegate && [delegate respondsToSelector:@selector(gonxControllerCanceledOrder:)])
+    {
+        [delegate gonxControllerCanceledOrder:self];
+    }
+
+    [pool drain];
 }
 @end

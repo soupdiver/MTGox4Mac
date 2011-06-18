@@ -27,6 +27,7 @@
 	[super init];
     
     //initiaiting the controller
+    [openOrdersTable setDelegate:self];
 	gonx = [[MTGONXController alloc] init];
 	[gonx setDelegate:self];
 	refreshPrices = FALSE;
@@ -77,7 +78,7 @@
         [[NSUserDefaults standardUserDefaults]setObject:@"" forKey:UsernameKey];
         [[NSUserDefaults standardUserDefaults]setObject:@"" forKey:PasswordKey];
     }
-    [gonx startGettingBalance:[loginUsername stringValue] andPassword:[loginPassword stringValue]]; //is used for checking logindata
+    [gonx startGettingBalanceWithUsername:[loginUsername stringValue] andPassword:[loginPassword stringValue]]; //is used for checking logindata
 }
 
 -(void)gonxController:(MTGONXController *)sender ReceivedPrices:(NSDictionary *)prices{
@@ -119,7 +120,7 @@
 
 -(IBAction)getBalance:(id)sender
 {
-	[gonx startGettingBalance:[loginUsername stringValue] andPassword:[loginPassword stringValue]];
+	[gonx startGettingBalanceWithUsername:[loginUsername stringValue] andPassword:[loginPassword stringValue]];
 }
 
 -(IBAction)getPrices:(id)sender
@@ -199,6 +200,11 @@
     [loginPassword setBackgroundColor: [NSColor colorWithCalibratedRed:1.0 green:0.0 blue:0.0 alpha:1.0]];
 }
 
+-(void)gonxControllerCanceledOrder:(MTGONXController *)sender
+{
+    [gonx startGettingOpenOrders:[loginUsername stringValue] andPassword:[loginPassword stringValue]];
+}
+
 -(IBAction)buyButtonPressed:(id)sender
 {
 	[gonx startPlacingOrderWithUsername:[loginUsername stringValue] 
@@ -215,5 +221,42 @@
 				  andAmount:[amount stringValue]
 					andType:@"sell"
 				   andPrice:[price stringValue]];
+}
+
+-(IBAction)cancelOrder:(id)sender
+{
+    id identifier = @"oid";
+    NSNumber *orderId = [self tableView:openOrdersTable objectValueForTableColumn:[openOrdersTable tableColumnWithIdentifier:identifier] row:[openOrdersTable selectedRow]];
+    identifier = @"type";
+    NSString *orderTypeString = [self tableView:openOrdersTable objectValueForTableColumn:[openOrdersTable tableColumnWithIdentifier:identifier] row:[openOrdersTable selectedRow]];
+    
+    NSNumber *orderType;
+    
+    if([orderTypeString isEqualToString:@"buy"])
+    {
+        orderType = [NSNumber numberWithInt:2];
+    }
+    else
+    {
+        orderType = [NSNumber numberWithInt:1];
+    }
+         
+    
+    [gonx startCancelingOrderWithUsername:[loginUsername stringValue] 
+                              andPassword:[loginPassword stringValue] 
+                               andOrderId:orderId 
+                             andOrderType:orderType];
+}
+
+-(void)tableViewSelectionDidChange:(NSNotification *)notification
+{
+    if([openOrdersTable selectedRow] != -1)
+    {
+        [cancelButton setEnabled:TRUE];
+    }
+    else
+    {
+        [cancelButton setEnabled:FALSE];
+    }
 }
 @end

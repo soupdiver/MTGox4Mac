@@ -11,7 +11,7 @@
 
 @class PreferencesController;
 
-@interface Controller : NSObject <MTGONXDelegate, NSTableViewDataSource> {
+@interface Controller : NSObject <MTGONXDelegate, NSTableViewDataSource, NSTableViewDelegate> {
     //stuff for loginView
     IBOutlet NSView *loginView;
     IBOutlet NSButton *loginButton;
@@ -26,6 +26,7 @@
 	IBOutlet NSTextField *balanceUSD;
 	IBOutlet NSTextField *balanceBTC;
 	IBOutlet NSButton *refreshButton;
+    IBOutlet NSButton *cancelButton;
 	IBOutlet NSTableView *openOrdersTable;
 	IBOutlet NSTextField *amount;
 	IBOutlet NSTextField *price;
@@ -51,6 +52,7 @@
 -(IBAction)getOpenOrders:(id)sender;
 -(IBAction)buyButtonPressed:(id)sender;
 -(IBAction)sellButtonPressed:(id)sender;
+-(IBAction)cancelOrder:(id)sender;
 
 -(IBAction)loginButtonPressed:(id)sender;
 
