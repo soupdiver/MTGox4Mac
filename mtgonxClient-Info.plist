@@ -22,6 +22,8 @@
 	<string>FEGL</string>
 	<key>CFBundleVersion</key>
 	<string>0.5</string>
+	<key>LSApplicationCategoryType</key>
+	<string>public.app-category.finance</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>${MACOSX_DEPLOYMENT_TARGET}</string>
 	<key>NSMainNibFile</key>

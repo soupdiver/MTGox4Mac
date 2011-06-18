@@ -192,9 +192,6 @@
 -(void)cancelOrder:(NSMutableDictionary *)userData
 {
     NSAutoreleasePool *pool = [NSAutoreleasePool new];
-	
-    NSLog(@"%@", [userData objectForKey:@"username"]);
-    NSLog(@"%@", [userData objectForKey:@"orderType"]);
     
 	NSString *url = [NSString stringWithString:@"https://mtgox.com/code/cancelOrder.php"];
 	NSString *bodyString = [NSString stringWithFormat:@"name=%@&pass=%@&oid=%@&type=%@", [userData objectForKey:@"username"], [userData objectForKey:@"password"], [userData objectForKey:@"orderId"], [userData objectForKey:@"orderType"]];
