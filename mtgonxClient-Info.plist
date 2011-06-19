@@ -7,7 +7,7 @@
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFile</key>
-	<string></string>
+	<string>mtgox4mac.icns</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.psy-coding.${PRODUCT_NAME:rfc1034identifier}</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -17,7 +17,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>0.5.1 beta</string>
 	<key>CFBundleSignature</key>
 	<string>FEGL</string>
 	<key>CFBundleVersion</key>
