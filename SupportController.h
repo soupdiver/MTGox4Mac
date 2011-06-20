@@ -11,7 +11,9 @@
 
 @interface SupportController : NSWindowController {
 @private
-    
 }
+
+-(IBAction)copyAddress:(id)sender;
+-(IBAction)gotoGitHub:(id)sender;
 
 @end
