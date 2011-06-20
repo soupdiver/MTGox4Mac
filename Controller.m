@@ -67,6 +67,16 @@
     [preferenceController showWindow:self];
 }
 
+-(IBAction)showSupportWindow:(id)sender
+{
+    if(supportController == nil)
+    {
+        supportController = [[SupportController alloc] init];
+    }
+    
+    [supportController showWindow:self];
+}
+
 -(IBAction)loginButtonPressed:(id)sender
 {
     //check if data should be remembered

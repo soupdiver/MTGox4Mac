@@ -14,6 +14,8 @@
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		DC1D124213A6B00400E506E9 /* README in Resources */ = {isa = PBXBuildFile; fileRef = DC1D124113A6B00400E506E9 /* README */; };
+		DC220BC513AFD1EC00288FB9 /* SupportUs.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC220BC413AFD1EC00288FB9 /* SupportUs.xib */; };
+		DC220BC813AFD41A00288FB9 /* SupportController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC220BC713AFD41A00288FB9 /* SupportController.m */; };
 		DC247B2D13A503A700AA71B9 /* Order.m in Sources */ = {isa = PBXBuildFile; fileRef = DC247B2C13A503A700AA71B9 /* Order.m */; };
 		DC7E55F313A3851300B35426 /* MTGONXController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7E55F213A3851300B35426 /* MTGONXController.m */; };
 		DCD6F79D13AB92A800F2C184 /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCD6F79C13AB92A800F2C184 /* Preferences.xib */; };
@@ -48,6 +50,9 @@
 		8D1107310486CEB800E47090 /* MtGox4Mac.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MtGox4Mac.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* MtGox4Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MtGox4Mac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC1D124113A6B00400E506E9 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		DC220BC413AFD1EC00288FB9 /* SupportUs.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SupportUs.xib; sourceTree = "<group>"; };
+		DC220BC613AFD41A00288FB9 /* SupportController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SupportController.h; sourceTree = "<group>"; };
+		DC220BC713AFD41A00288FB9 /* SupportController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SupportController.m; sourceTree = "<group>"; };
 		DC247B2B13A503A700AA71B9 /* Order.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Order.h; sourceTree = "<group>"; };
 		DC247B2C13A503A700AA71B9 /* Order.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Order.m; sourceTree = "<group>"; };
 		DC7E55F113A3851300B35426 /* MTGONXController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTGONXController.h; sourceTree = "<group>"; };
@@ -111,6 +116,8 @@
 				DC247B2C13A503A700AA71B9 /* Order.m */,
 				DCD6F79E13AB935C00F2C184 /* PreferencesController.h */,
 				DCD6F79F13AB935C00F2C184 /* PreferencesController.m */,
+				DC220BC613AFD41A00288FB9 /* SupportController.h */,
+				DC220BC713AFD41A00288FB9 /* SupportController.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -171,6 +178,7 @@
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				1DDD58140DA1D0A300B32029 /* MainMenu.xib */,
 				DCD6F79C13AB92A800F2C184 /* Preferences.xib */,
+				DC220BC413AFD1EC00288FB9 /* SupportUs.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -272,6 +280,7 @@
 				DC1D124213A6B00400E506E9 /* README in Resources */,
 				DCD6F79D13AB92A800F2C184 /* Preferences.xib in Resources */,
 				4C302D5513ADDE840023F0CA /* mtgox4mac.icns in Resources */,
+				DC220BC513AFD1EC00288FB9 /* SupportUs.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,6 +309,7 @@
 				DC7E55F313A3851300B35426 /* MTGONXController.m in Sources */,
 				DC247B2D13A503A700AA71B9 /* Order.m in Sources */,
 				DCD6F7A013AB935C00F2C184 /* PreferencesController.m in Sources */,
+				DC220BC813AFD41A00288FB9 /* SupportController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

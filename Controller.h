@@ -8,6 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import "MTGONXController.h"
+#import "SupportController.h"
 
 @class PreferencesController;
 
@@ -39,6 +40,7 @@
 	bool refreshPrices;
     bool isLoggedIn;
     PreferencesController *preferenceController;
+    SupportController *supportController;
 }
 
 +(void)initialize;
@@ -46,6 +48,7 @@
 -(CGPoint)PointForCenterOriginWithFrameSize:(NSSize) size;
 
 -(IBAction)showPreferencesWindow:(id)sender;
+-(IBAction)showSupportWindow:(id)sender;
 
 -(IBAction)getPrices:(id)sender;
 -(IBAction)getBalance:(id)sender;

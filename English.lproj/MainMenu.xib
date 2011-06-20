@@ -91,6 +91,15 @@
 									<reference key="NSOnImage" ref="35465992"/>
 									<reference key="NSMixedImage" ref="502551668"/>
 								</object>
+								<object class="NSMenuItem" id="1048180412">
+									<reference key="NSMenu" ref="110575045"/>
+									<string key="NSTitle">Support Us</string>
+									<string key="NSKeyEquiv">s</string>
+									<int key="NSKeyEquivModMask">1048576</int>
+									<int key="NSMnemonicLoc">2147483647</int>
+									<reference key="NSOnImage" ref="35465992"/>
+									<reference key="NSMixedImage" ref="502551668"/>
+								</object>
 								<object class="NSMenuItem" id="609285721">
 									<reference key="NSMenu" ref="110575045"/>
 									<string key="NSTitle">Preferences…</string>
@@ -1526,6 +1535,14 @@
 					</object>
 					<int key="connectionID">762</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">showSupportWindow:</string>
+						<reference key="source" ref="912729576"/>
+						<reference key="destination" ref="1048180412"/>
+					</object>
+					<int key="connectionID">769</int>
+				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<array key="orderedObjects">
@@ -1593,6 +1610,7 @@
 							<reference ref="1056857174"/>
 							<reference ref="342932134"/>
 							<reference ref="609285721"/>
+							<reference ref="1048180412"/>
 						</array>
 						<reference key="parent" ref="694149608"/>
 					</object>
@@ -2257,6 +2275,11 @@
 						<reference key="object" ref="24411073"/>
 						<reference key="parent" ref="415532780"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">768</int>
+						<reference key="object" ref="1048180412"/>
+						<reference key="parent" ref="110575045"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -2447,6 +2470,7 @@
 				<string key="763.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="764.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="765.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="768.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="92.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<integer value="1" key="92.ImportedFromIB2"/>
 			</dictionary>
@@ -2454,7 +2478,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">767</int>
+			<int key="maxID">769</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -2470,6 +2494,7 @@
 						<string key="loginButtonPressed:">id</string>
 						<string key="sellButtonPressed:">id</string>
 						<string key="showPreferencesWindow:">id</string>
+						<string key="showSupportWindow:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
 						<object class="IBActionInfo" key="buyButtonPressed:">
@@ -2502,6 +2527,10 @@
 						</object>
 						<object class="IBActionInfo" key="showPreferencesWindow:">
 							<string key="name">showPreferencesWindow:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="showSupportWindow:">
+							<string key="name">showSupportWindow:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 					</dictionary>
