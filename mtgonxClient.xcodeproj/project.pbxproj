@@ -16,6 +16,8 @@
 		DC1D124213A6B00400E506E9 /* README in Resources */ = {isa = PBXBuildFile; fileRef = DC1D124113A6B00400E506E9 /* README */; };
 		DC220BC513AFD1EC00288FB9 /* SupportUs.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC220BC413AFD1EC00288FB9 /* SupportUs.xib */; };
 		DC220BC813AFD41A00288FB9 /* SupportController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC220BC713AFD41A00288FB9 /* SupportController.m */; };
+		DC220BCE13AFE33700288FB9 /* EMKeychainItem.m in Sources */ = {isa = PBXBuildFile; fileRef = DC220BCD13AFE33700288FB9 /* EMKeychainItem.m */; };
+		DC220BD413AFE48200288FB9 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC220BD313AFE48100288FB9 /* Security.framework */; };
 		DC247B2D13A503A700AA71B9 /* Order.m in Sources */ = {isa = PBXBuildFile; fileRef = DC247B2C13A503A700AA71B9 /* Order.m */; };
 		DC7E55F313A3851300B35426 /* MTGONXController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7E55F213A3851300B35426 /* MTGONXController.m */; };
 		DCD6F79D13AB92A800F2C184 /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCD6F79C13AB92A800F2C184 /* Preferences.xib */; };
@@ -53,6 +55,9 @@
 		DC220BC413AFD1EC00288FB9 /* SupportUs.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SupportUs.xib; sourceTree = "<group>"; };
 		DC220BC613AFD41A00288FB9 /* SupportController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SupportController.h; sourceTree = "<group>"; };
 		DC220BC713AFD41A00288FB9 /* SupportController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SupportController.m; sourceTree = "<group>"; };
+		DC220BCC13AFE33700288FB9 /* EMKeychainItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMKeychainItem.h; sourceTree = "<group>"; };
+		DC220BCD13AFE33700288FB9 /* EMKeychainItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMKeychainItem.m; sourceTree = "<group>"; };
+		DC220BD313AFE48100288FB9 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		DC247B2B13A503A700AA71B9 /* Order.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Order.h; sourceTree = "<group>"; };
 		DC247B2C13A503A700AA71B9 /* Order.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Order.m; sourceTree = "<group>"; };
 		DC7E55F113A3851300B35426 /* MTGONXController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTGONXController.h; sourceTree = "<group>"; };
@@ -95,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC220BD413AFE48200288FB9 /* Security.framework in Frameworks */,
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -105,6 +111,8 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				DC220BCC13AFE33700288FB9 /* EMKeychainItem.h */,
+				DC220BCD13AFE33700288FB9 /* EMKeychainItem.m */,
 				DCEF6BAA13A26C820023DAA5 /* Controller.h */,
 				DCEF6BAB13A26C820023DAA5 /* Controller.m */,
 				DCEF6BD513A273370023DAA5 /* json */,
@@ -151,6 +159,7 @@
 		29B97314FDCFA39411CA2CEA /* mtgonxClient */ = {
 			isa = PBXGroup;
 			children = (
+				DC220BD313AFE48100288FB9 /* Security.framework */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -310,6 +319,7 @@
 				DC247B2D13A503A700AA71B9 /* Order.m in Sources */,
 				DCD6F7A013AB935C00F2C184 /* PreferencesController.m in Sources */,
 				DC220BC813AFD41A00288FB9 /* SupportController.m in Sources */,
+				DC220BCE13AFE33700288FB9 /* EMKeychainItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

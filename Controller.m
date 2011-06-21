@@ -8,8 +8,11 @@
 
 #import "Controller.h"
 #import "PreferencesController.h"
+#import "EMKeychainItem.h"
 
 @implementation Controller
+
+NSString * const KEYCHAIN_SERVICE_NAME = @"MtGox4Mac";
 
 +(void)initialize
 {
@@ -54,7 +57,8 @@
     [mainWindow setContentView:loginView];
     
     [loginUsername setStringValue:[[NSUserDefaults standardUserDefaults] stringForKey:UsernameKey]];
-    [loginPassword setStringValue:[[NSUserDefaults standardUserDefaults] objectForKey:PasswordKey]];
+    
+    [loginPassword setStringValue:[self userpasswordFromKeychainWithUsername:[loginUsername stringValue]]];
 }
 
 -(IBAction)showPreferencesWindow:(id)sender
@@ -81,12 +85,12 @@
 {
     //check if data should be remembered
     if ([rememberCheckbox state] == NSOnState) {
+        [self saveUsernameToKeyChain:[loginUsername stringValue] andPassword:[loginPassword stringValue]];
         [[NSUserDefaults standardUserDefaults]setObject:[loginUsername stringValue] forKey:UsernameKey];
-        [[NSUserDefaults standardUserDefaults]setObject:[loginPassword stringValue] forKey:PasswordKey];
     }
     else {
+        [self removeUserdatafromKeychainWithUsername:[loginUsername stringValue]];
         [[NSUserDefaults standardUserDefaults]setObject:@"" forKey:UsernameKey];
-        [[NSUserDefaults standardUserDefaults]setObject:@"" forKey:PasswordKey];
     }
     [gonx startGettingBalanceWithUsername:[loginUsername stringValue] andPassword:[loginPassword stringValue]]; //is used for checking logindata
 }
@@ -271,4 +275,41 @@
         [cancelButton setEnabled:FALSE];
     }
 }
+
+-(void)saveUsernameToKeyChain:(NSString *)username andPassword:(NSString *)password
+{
+    EMKeychainItem *item = [EMGenericKeychainItem genericKeychainItemForService:KEYCHAIN_SERVICE_NAME withUsername:username];
+    //item does not exist.. so create
+    if(!item)
+    {
+        [EMGenericKeychainItem addGenericKeychainItemForService:KEYCHAIN_SERVICE_NAME withUsername:username password:password];
+    }
+    else
+    {
+        item.password = password;
+        item.username = username;
+    }
+}
+
+-(void)removeUserdatafromKeychainWithUsername:(NSString *)username
+{
+    EMKeychainItem *item = [EMGenericKeychainItem genericKeychainItemForService:KEYCHAIN_SERVICE_NAME withUsername:username];
+    if(item)
+    {
+        item.username = @"";
+        item.password = @"";
+    }
+}
+
+-(NSString*)userpasswordFromKeychainWithUsername:(NSString *)username
+{
+    EMKeychainItem *item = [EMGenericKeychainItem genericKeychainItemForService:KEYCHAIN_SERVICE_NAME withUsername:username];
+    if(item)
+    {
+        return item.password;
+    }
+    NSLog(@"No Keychain item with this username");
+    return @"";
+}
+
 @end

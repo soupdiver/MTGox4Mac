@@ -9,6 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import "MTGONXController.h"
 #import "SupportController.h"
+#import "EMKeychainItem.h"
 
 @class PreferencesController;
 
@@ -46,6 +47,10 @@
 +(void)initialize;
 
 -(CGPoint)PointForCenterOriginWithFrameSize:(NSSize) size;
+-(void)saveUsernameToKeyChain:(NSString*)username 
+                  andPassword:(NSString*)password;
+-(NSString*)userpasswordFromKeychainWithUsername:(NSString*)username;
+-(void)removeUserdatafromKeychainWithUsername:(NSString*)username;
 
 -(IBAction)showPreferencesWindow:(id)sender;
 -(IBAction)showSupportWindow:(id)sender;
