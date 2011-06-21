@@ -39,9 +39,9 @@ NSString * const KEYCHAIN_SERVICE_NAME = @"MtGox4Mac";
 	return self;
 }
 
--(CGPoint)PointForCenterOriginWithFrameSize:(NSSize)size
+-(NSPoint)PointForCenterOriginWithFrameSize:(NSSize)size
 {
-    CGPoint result;
+    NSPoint result;
     result.x = [[NSScreen mainScreen]frame].size.width / 2 - (size.width / 2);
     result.y = [[NSScreen mainScreen]frame].size.height / 2 - (size.height / 2);
     
