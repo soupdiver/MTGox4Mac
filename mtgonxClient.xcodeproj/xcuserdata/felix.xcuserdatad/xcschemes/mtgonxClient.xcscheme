@@ -14,7 +14,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8D1107260486CEB800E47090"
-               BuildableName = "mtgonxClient.app"
+               BuildableName = "MtGox4Mac.app"
                BlueprintName = "mtgonxClient"
                ReferencedContainer = "container:mtgonxClient.xcodeproj">
             </BuildableReference>
@@ -41,7 +41,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8D1107260486CEB800E47090"
-            BuildableName = "mtgonxClient.app"
+            BuildableName = "MtGox4Mac.app"
             BlueprintName = "mtgonxClient"
             ReferencedContainer = "container:mtgonxClient.xcodeproj">
          </BuildableReference>
@@ -60,7 +60,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8D1107260486CEB800E47090"
-            BuildableName = "mtgonxClient.app"
+            BuildableName = "MtGox4Mac.app"
             BlueprintName = "mtgonxClient"
             ReferencedContainer = "container:mtgonxClient.xcodeproj">
          </BuildableReference>
